@@ -1,4 +1,4 @@
-FROM buluma/debian:bullseye
+FROM debian:bullseye
 LABEL maintainer="Michael Buluma"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -17,7 +17,7 @@ RUN apt-get update \
     && apt-get clean
 
 # Remove existing ansible
-RUN pip3 uninstall ansible && pip3 uninstall ansible-base
+# RUN pip3 uninstall ansible && pip3 uninstall ansible-base
 
 # Upgrade pip to latest version.
 RUN pip3 install --upgrade pip
